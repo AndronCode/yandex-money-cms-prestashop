@@ -1979,7 +1979,7 @@ class Yamodule extends PaymentModuleCore
         $total_to_pay    = $cart->getOrderTotal(true);
         $rub_currency_id = Currency::getIdByIsoCode('RUB');
         if ($cart->id_currency != $rub_currency_id) {
-            $from_currency = new Currency($cart->id_curre1ncy);
+            $from_currency = new Currency($cart->id_currency);
             $to_currency   = new Currency($rub_currency_id);
             $total_to_pay  = Tools::convertPriceFull($total_to_pay, $from_currency, $to_currency);
         }
